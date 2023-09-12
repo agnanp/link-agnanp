@@ -1,11 +1,11 @@
 /* Style Settings */
 @import url('http://fonts.googleapis.com/css?family=Roboto');
 :root {
-    --bgColor:#f49292;
-    --accentColor: #eaf9e4;
-    --complementColor: #FFFFFF;
+    --bgColor:#040D12;
+    --accentColor: #183D3D;
+    --complementColor: #5C8374;
     --font: 'Lucida Handwriting', monospace;
-    --hoverColor: #92a6f4;
+    --hoverColor: #93B1A6;
 }
 
 body{
