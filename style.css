@@ -2,10 +2,10 @@
 @import url('http://fonts.googleapis.com/css?family=Roboto');
 :root {
     --bgColor:#040D12;
-    --accentColor: #183D3D;
-    --complementColor: #5C8374;
+    --accentColor: #A7D129;
+    --complementColor: #616F39;
     --font: 'Lucida Handwriting', monospace;
-    --hoverColor: #93B1A6;
+    --hoverColor: #040D12;
 }
 
 body{
@@ -59,6 +59,62 @@ body{
 }
 
 .link:hover{
-    background-color: var(--bgColor);
+    background-color: var(--hoverColor);
     color: var(--accentColor);
+}
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--bgColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-loader {
+    width: 69px;
+    height: 36px;
+    --c:radial-gradient(farthest-side,#A7D129 90%,#0000);
+    background:var(--c), var(--c), var(--c), var(--c);
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    animation:d3 2s infinite linear; 
+}
+
+@keyframes d3 {
+    0%     {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
+    16.67% {background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
+    33.33% {background-position: calc(0*100%/3) 100%,calc(1*100%/3) 0   ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
+    50%    {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 100%,calc(2*100%/3) 0   ,calc(3*100%/3) 50% }
+    66.67% {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 100%,calc(3*100%/3) 0   }
+    83.33% {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 100%}
+    100%   {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#homePage {
+    display: none;
+    text-align: center;
 }
